@@ -8,6 +8,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
+// Page order matches the numbered sections in the nav.
 export default function App() {
   return (
     <>
