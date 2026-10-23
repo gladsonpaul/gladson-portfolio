@@ -57,13 +57,13 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="section-border py-24 md:py-32 lg:py-48"
+      className="section-border section-y"
     >
       <div className="container">
-        <p className="section-label mb-6">07 / Contact</p>
+        <p className="section-label mb-6">06 / Contact</p>
 
         <div ref={contentRef}>
-          <h2 className="font-display max-w-4xl text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-[var(--text)]">
+          <h2 className="font-display max-w-4xl text-[clamp(2rem,8vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-balance text-[var(--text)]">
             Have a problem worth building?
           </h2>
 
@@ -78,15 +78,15 @@ export default function Contact() {
                   href={link.href}
                   target={link.label === 'Email' ? undefined : '_blank'}
                   rel={link.label === 'Email' ? undefined : 'noopener noreferrer'}
-                  className="group flex items-center justify-between border-b border-[var(--line)] py-5 transition-colors hover:border-[var(--text)] focus-ring"
+                  className="group flex items-center justify-between gap-4 border-b border-[var(--line)] py-5 transition-colors hover:border-[var(--text)] focus-ring"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex min-w-0 items-center gap-4">
                     <link.icon size={20} className="text-[var(--muted)]" />
                     <div>
                       <p className="text-xs font-medium uppercase tracking-widest text-[var(--muted)]">
                         {link.label}
                       </p>
-                      <p className="font-display mt-1 text-lg font-medium text-[var(--text)] md:text-xl">
+                      <p className="font-display mt-1 text-base font-medium break-all text-[var(--text)] sm:break-normal sm:text-lg md:text-xl">
                         {link.display}
                       </p>
                     </div>

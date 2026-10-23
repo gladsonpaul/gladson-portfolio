@@ -102,7 +102,7 @@ export default function ProjectCard({
       onBlur={!isMobile ? onDeactivate : undefined}
       onClick={isMobile ? onActivate : undefined}
       onKeyDown={handleKeyDown}
-      className={`group relative flex min-h-0 flex-col overflow-hidden transition-colors duration-300 focus-ring ${
+      className={`group relative flex w-full min-w-0 flex-col overflow-hidden transition-colors duration-300 focus-ring ${
         isMobile
           ? `cursor-pointer border border-[var(--line)] p-5 ${mobileQuiet ? 'opacity-50' : ''}`
           : 'cursor-default border-r border-[var(--line)] p-5 last:border-r-0 md:p-6 lg:p-7'
@@ -111,7 +111,7 @@ export default function ProjectCard({
           ? 'z-10 border-[var(--text)] bg-[var(--bg-active)]'
           : 'bg-[var(--bg)]'
       }`}
-      style={{ flexGrow: 1, flexBasis: 0, minWidth: 0 }}
+      style={isMobile ? undefined : { flexGrow: 1, flexBasis: 0, minWidth: 0 }}
     >
       {isActive && (
         <div

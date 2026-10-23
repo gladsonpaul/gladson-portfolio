@@ -161,7 +161,7 @@ export default function BuildProcess() {
     <section
       id="process"
       ref={sectionRef}
-      className="section-border py-24 md:py-32 lg:py-40"
+      className="section-border section-y"
     >
       <div className="container">
         <p className="section-label mb-6">03 / HOW I BUILD</p>

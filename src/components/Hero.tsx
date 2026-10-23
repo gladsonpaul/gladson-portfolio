@@ -46,14 +46,14 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative flex min-h-screen flex-col justify-between pt-28 pb-10 md:pt-32 md:pb-14"
+      className="relative flex min-h-[100svh] flex-col justify-between pt-24 pb-8 sm:pt-28 sm:pb-10 md:pt-32 md:pb-14"
     >
       <div className="container flex flex-1 flex-col justify-center">
         <h1 className="font-display font-semibold leading-[0.82] tracking-[-0.04em] text-[var(--text)]">
           <span className="block overflow-hidden">
             <span
               ref={line1Ref}
-              className="block text-[clamp(4rem,12vw,11rem)]"
+              className="block text-[clamp(2.35rem,12.4vw,11rem)]"
             >
               I BUILD
             </span>
@@ -61,7 +61,7 @@ export default function Hero() {
           <span className="block overflow-hidden">
             <span
               ref={line2Ref}
-              className="block text-[clamp(4rem,12vw,11rem)]"
+              className="block text-[clamp(2.35rem,12.4vw,11rem)]"
             >
               PRODUCTS.
             </span>
@@ -70,7 +70,7 @@ export default function Hero() {
 
         <p
           ref={descRef}
-          className="mt-8 max-w-xl text-base leading-relaxed text-[var(--muted)] md:mt-10 md:text-lg"
+          className="mt-6 max-w-xl text-base leading-relaxed text-[var(--muted)] sm:mt-8 md:mt-10 md:text-lg"
         >
           Full Stack Engineer | Product Builder building products across
           frontend, backend, data and infrastructure.

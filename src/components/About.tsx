@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <section id="about" className="section-border py-24 md:py-32 lg:py-40">
+    <section id="about" className="section-border section-y">
       <div className="container">
-        <p className="section-label mb-6">06 / About</p>
+        <p className="section-label mb-6">05 / About</p>
         <h2 className="font-display mb-12 max-w-4xl text-[clamp(2rem,5vw,3.5rem)] font-semibold leading-[1.1] tracking-[-0.03em] text-[var(--text)] md:mb-16">
           I started with frontend.
           <br />
@@ -43,7 +43,7 @@ export default function About() {
             <dt className="text-xs font-medium uppercase tracking-widest text-[var(--muted)]">
               Role
             </dt>
-            <dd className="font-display mt-1 text-lg font-medium text-[var(--text)]">
+            <dd className="font-display mt-1 max-w-full text-lg font-medium text-balance text-[var(--text)]">
               Full Stack Engineer | Product Builder
             </dd>
           </div>

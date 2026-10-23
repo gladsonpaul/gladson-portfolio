@@ -35,13 +35,13 @@ export default function Intro() {
     <section
       id="approach"
       ref={sectionRef}
-      className="section-border py-24 md:py-32 lg:py-40"
+      className="section-border section-y"
     >
       <div className="container">
         <p className="section-label mb-12 md:mb-16">01 / Approach</p>
         <p
           ref={textRef}
-          className="font-display max-w-5xl text-[clamp(1.75rem,4.5vw,3.5rem)] font-medium leading-[1.15] tracking-[-0.03em] text-[var(--text)]"
+          className="font-display max-w-5xl text-[clamp(1.5rem,4.8vw,3.5rem)] font-medium leading-[1.15] tracking-[-0.03em] text-balance text-[var(--text)]"
         >
           &ldquo;I like taking messy problems, understanding what actually needs
           to be solved, and turning them into software people can use.&rdquo;

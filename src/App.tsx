@@ -3,8 +3,7 @@ import Hero from './components/Hero'
 import Intro from './components/Intro'
 import Work from './components/Work'
 import BuildProcess from './components/BuildProcess'
-import AISection from './components/AISection'
-import TechStack from './components/TechStack'
+import Skills from './components/Skills'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -18,8 +17,7 @@ export default function App() {
         <Intro />
         <Work />
         <BuildProcess />
-        <AISection />
-        <TechStack />
+        <Skills />
         <About />
         <Contact />
       </main>

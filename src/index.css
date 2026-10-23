@@ -80,6 +80,28 @@ body {
   border-top: 1px solid var(--line);
 }
 
+.section-y {
+  padding-block: 4.25rem;
+}
+
+@media (min-width: 640px) {
+  .section-y {
+    padding-block: 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-y {
+    padding-block: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 10rem;
+  }
+}
+
 .focus-ring:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;

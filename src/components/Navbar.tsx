@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Work', href: '#work' },
+  { label: 'Skills', href: '#skills' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -25,6 +26,15 @@ export default function Navbar() {
     }
   }, [menuOpen])
 
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1024px)')
+    const close = () => {
+      if (desktop.matches) setMenuOpen(false)
+    }
+    desktop.addEventListener('change', close)
+    return () => desktop.removeEventListener('change', close)
+  }, [])
+
   const handleNavClick = (href: string) => {
     setMenuOpen(false)
     const el = document.querySelector(href)
@@ -32,10 +42,11 @@ export default function Navbar() {
   }
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'border-b border-[var(--line)] bg-[var(--bg)]/90 backdrop-blur-sm'
+        menuOpen || scrolled
+          ? 'border-b border-[var(--line)] bg-[var(--bg)]'
           : 'bg-transparent'
       }`}
     >
@@ -54,7 +65,7 @@ export default function Navbar() {
           GP.
         </a>
 
-        <ul className="hidden items-center gap-10 md:flex">
+        <ul className="hidden items-center gap-8 lg:flex xl:gap-10">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -73,7 +84,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="flex items-center justify-center p-2 text-[var(--text)] md:hidden focus-ring"
+          className="flex h-11 w-11 items-center justify-center text-[var(--text)] lg:hidden focus-ring"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -82,26 +93,28 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {menuOpen && (
-        <div className="border-t border-[var(--line)] bg-[var(--bg)] md:hidden">
-          <ul className="container flex flex-col gap-1 py-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleNavClick(link.href)
-                  }}
-                  className="block py-3 text-base font-medium text-[var(--text)] focus-ring"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </header>
+
+    {menuOpen && (
+      <div className="fixed inset-x-0 bottom-0 top-[4.5rem] z-40 overflow-y-auto bg-[var(--bg)] lg:hidden">
+        <ul className="container flex flex-col py-4">
+          {navLinks.map((link) => (
+            <li key={link.href} className="border-b border-[var(--line)]">
+              <a
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleNavClick(link.href)
+                }}
+                className="font-display block py-5 text-3xl font-semibold tracking-tight text-[var(--text)] focus-ring sm:py-6 sm:text-4xl"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+    </>
   )
 }

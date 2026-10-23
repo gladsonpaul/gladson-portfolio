@@ -15,7 +15,7 @@ export default function Work() {
   const panelRefs = useRef<(HTMLDivElement | null)[]>([])
   const contentRefs = useRef<(HTMLDivElement | null)[]>([])
   const leaveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const isMobile = useMediaQuery('(max-width: 767px)')
+  const isMobile = useMediaQuery('(max-width: 1023px)')
   const reducedMotion = useReducedMotion()
 
   const clearLeaveTimeout = useCallback(() => {
@@ -65,7 +65,15 @@ export default function Work() {
   )
 
   useLayoutEffect(() => {
-    if (isMobile) return
+    if (isMobile) {
+      panelRefs.current.forEach((panel) => {
+        if (panel) gsap.set(panel, { clearProps: 'flexGrow' })
+      })
+      contentRefs.current.forEach((content) => {
+        if (content) gsap.set(content, { clearProps: 'opacity' })
+      })
+      return
+    }
 
     const ctx = gsap.context(() => {
       panelRefs.current.forEach((panel) => {
@@ -113,7 +121,7 @@ export default function Work() {
   const mobileActive = mobileActiveIndex
 
   return (
-    <section id="work" className="section-border py-24 md:py-32 lg:py-40">
+    <section id="work" className="section-border section-y">
       <div className="container">
         <p className="section-label mb-6">02 / Selected Work</p>
         <div className="mb-12 md:mb-16">
